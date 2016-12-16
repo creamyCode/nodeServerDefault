@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 // routes 컨트롤
 var routes = path.join(__dirname, 'routes');
-var angular = require(path.join(routes, 'angular'));
+var angular = require(path.join(routes, 'routes'));
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -15,12 +15,9 @@ app.use(express.static(path.join(__dirname, 'public')));  // 스태틱 파일 �
 app.use(bodyParser.json()); //들어오는 http request body가 json 일때도 파싱할 수 있도록 지원한다.
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// 파일 업로드 관련
-var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
 
 app.listen(3000);
 
-app.get('/helloAngular', angular.hello);
+app.get('/', angular.index);
 
 console.log('start server !!');
