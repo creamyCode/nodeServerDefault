@@ -5,11 +5,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
 
     entry: {
-        index: __dirname + '/client/js/index.js'
+        index: __dirname + '/client/index.js'
     },
 
     output: {
-        path: __dirname + '/public/js',
+        path: __dirname + '/public',
         filename: '[name].js'
     },
 
@@ -20,8 +20,8 @@ module.exports = {
             },
         }),
         new HtmlWebpackPlugin({
-            template: __dirname + '/client/views/index.html',
-            filename: __dirname + '/public/views/index.html'
+            template: __dirname + '/client/index.html',
+            filename: __dirname + '/public/index.html'
         })
     ],
 

@@ -5,18 +5,18 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
 
     entry: {
-        index: __dirname + '/client/js/index.js'
+        index: __dirname + '/client/index.js'
     },
 
     output: {
-        path: __dirname + '/public/js',
+        path: __dirname + '/public',
         filename: '[name].js'
     },
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-          template: __dirname + '/client/views/index.html',
+          template: __dirname + '/client/index.html',
         })
     ],
 
@@ -24,7 +24,7 @@ module.exports = {
         //inline: true,
         port: 7777,
         hot: true,
-        contentBase: __dirname + '/public/views/'
+        contentBase: __dirname + '/public'
     },
 
     module: {
